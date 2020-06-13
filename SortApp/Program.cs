@@ -4,34 +4,37 @@ namespace SortApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main (string[] args)
         {
-            int[] nums = new int[7];
-            Console.WriteLine("Введите семь чисел");
-            for (int i = 0; i < nums.Length; i++) 
+            Console.WriteLine ("Введите номер дня недели: \n1-понедельник \n2-вторник \n3-среда \n4-четверг \n5-пятница \n6-суббота \n7-воскресеенье");
+            int num = Convert.ToInt32 (Console.ReadLine());
+            switch (num)
             {
-                Console.WriteLine("{0}-е число", i + 1);
-                nums[i] = Int32.Parse(Console.ReadLine());
+                case 1:
+                    Console.WriteLine ("Понедельник. Работа до 17.00. Бег");
+                    break;
+                case 2:
+                    Console.WriteLine ("Втоник. Работа -дом");
+                    break;
+                case 3:
+                    Console.WriteLine ("Среда. Работа-магазин-дом");
+                    break;
+                case 4:
+                    Console.WriteLine ("Четверг. Работа-качалка-дом");
+                    break;
+                case 5:
+                    Console.WriteLine ("Пятница. Работа-качалка-дом");
+                    break;
+                case 6:
+                    Console.WriteLine ("Суббота. Домашние дела, бар");
+                    break;
+                case 7:
+                    Console.WriteLine ("Воскресенье. Жуткое  похмелье, домашние дела");
+                    break;
             }
-            int temp;
-            for (int i = 0; i < nums.Length - 1; i++)
-            {
-                for (int j = i + 1; j < nums.Length; j++)
-                {
-                    if (nums[i] > nums[j])
-                    {
-                        temp = nums[i];
-                        nums[i] = nums[j];
-                        nums[j] = temp;
-                    }
-                }
-            }
-            Console.WriteLine("Вывод отсортированного массива");
-            for (int i = 0; i < nums.Length; i++) 
-            {
-                Console.WriteLine(nums[i]);
-            }
-            Console.ReadLine();
-        }
+                    Console.ReadKey();
+            return;
+
+        }    
     }
 }
